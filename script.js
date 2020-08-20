@@ -1,7 +1,13 @@
 // Assignment code here
 
 // global variables
+// variable declaration for password length
 var passwordLength;
+// variable declaration for character types, default true for all
+var characterType = {lowercase: true,
+                     uppercase: true,
+                     numeric:   true,
+                     special:   true};
 
 // prompt user for Password Criteria
 var passCrit = function() {
@@ -10,6 +16,7 @@ var passCrit = function() {
 
   // Prompt/ask user for character count and check if valid
   passLength();
+
 };
 
 // function prompts user for charcater count and checks if valid
@@ -29,7 +36,6 @@ var passLength = function(){
     } else 
       valid = true;
   }
-
 }
 passCrit();
 
