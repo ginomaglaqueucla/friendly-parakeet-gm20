@@ -1,5 +1,11 @@
 // Assignment code here
 
+// prompt user for Password Criteria
+var passCrit = function() {
+  window.alert("Welcome to Password Generator!\nPassword Criteria:\n1.) 8 character minimum 127 character maximum\n2.) MUST include at least one of the following character types:\nlowercase, uppercase, numeric, and/or special characters");
+};
+
+passCrit();
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
