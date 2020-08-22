@@ -54,13 +54,13 @@ var passCharType = function(){
 
       // assign value and check if valid
       if (i === 0){
-        passwordCrit.charType.lowercase = userSelection;
+        passwordCrit.charType[i].lowercase = userSelection;
       } else if (i === 1){
-          passwordCrit.charType.uppercase = userSelection;
+          passwordCrit.charType[i].uppercase = userSelection;
       } else if (i === 2) {
-          passwordCrit.charType.numeric = userSelection;
+          passwordCrit.charType[i].numeric = userSelection;
       } else if (i === 3) {
-          passwordCrit.charType.special = userSelection;
+          passwordCrit.charType[i].special = userSelection;
       }
       // check if at least one selection was made algorithm
       if (!userSelection) {
