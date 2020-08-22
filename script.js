@@ -3,15 +3,6 @@
 // global variables
 // variable declaration for password length
 
-// object declaration, defaults to unvalid options
-var passwordCrit = {
-                    charCount: 1,
-                    charType: { lowercase: false,
-                                uppercase: false,
-                                numeric:   false,
-                                special:   false}
-
-}
 
 // prompt user for Password Criteria
 var generatePassword = function() {
@@ -19,7 +10,11 @@ var generatePassword = function() {
   window.alert("Welcome to Password Generator!\nPassword Criteria:\n1.) 8 character minimum 127 character maximum\n2.) MUST include at least one of the following character types:\nlowercase, uppercase, numeric, and/or special characters");
   
   // Prompt/ask user for character count and check if valid
+
   passLength();
+
+  // Prompt/ask user for character types desired and check if valid
+  // passCharType();
 
 };
 
@@ -31,16 +26,72 @@ var passLength = function(){
   // while loop to prompt user for password length until validation passes
   while (!valid) {
     // prompt
-    passwordLength = window.prompt("Choose password length:");
+    passwordCrit.charCount = window.prompt("Choose password length:");
+  
 
     // check validation
-    if (passwordLength < 8 || passwordLength > 127) {
+    if (passwordCrit.charCount < 8 || passwordCrit.charCount > 127) {
       window.alert("INVALID input, please input a number between 8 - 127")
       valid = false;
     } else 
       valid = true;
   }
 }
+
+var passCharType = function(){
+  // pass or fail flag
+  var valid = false;
+
+  // while loop to prompt user character type selection until validation passes
+  while(!valid) {
+    window.alert(passwordCrit.charType[0]);
+    // for loop to cycle thru charType object
+    for (var i=0; i < passwordCrit.charType.length - 1; i++ ){
+      // prompt
+      passwordCrit.charType[i] = window.confirm(charTypePrompts[i])
+
+      // check if at least one selection was made algorithm
+      if (passwordCrit.charType[i]) {
+        valid = true;
+      } else {
+        valid = false;
+      }
+    }
+    // alert if doesn't pass validation and 
+    if (!valid) {
+      window.alert("INVALID! You must select at least one of the character type options");
+    }
+  }
+}
+
+// object declaration, defaults to unvalid options
+var passwordCrit = {
+  charCount: 1,
+  charType: [ 
+            {lowercase: false,
+             message: "Would you like to include lowercase characters in your password?"
+            },
+            {
+             uppercase: false,
+             message: "Would you like to include uppercase characters in your password?"
+            },
+            {
+             numeric: false,
+             message: "Would you like to include numeric characters in your password?"
+            },
+            {
+             special: false,
+             message: "Would you like to include special characters in your password?"
+            }
+          ]              
+};
+
+// var charTypePrompts = [
+//     "Would you like to include lowercase characters in your password?",
+//     "Would you like to include uppercase characters in your password?",
+//     "Would you like to include numeric characters in your password?",
+//     "Would you like to include special characters in your password?"
+// ];
 generatePassword();
 
 // Get references to the #generate element
