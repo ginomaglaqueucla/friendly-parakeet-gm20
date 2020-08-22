@@ -1,16 +1,10 @@
 // Assignment code here
 
-// global variables
-// variable declaration for password length
-
-
-// prompt user for Password Criteria
 var generatePassword = function() {
   // Welcome user and prompt with Password Criteria
   window.alert("Welcome to Password Generator!\nPassword Criteria:\n1.) 8 character minimum 127 character maximum\n2.) MUST include at least one of the following character types:\nlowercase, uppercase, numeric, and/or special characters");
   
   // Prompt/ask user for character count and check if valid
-
   passLength();
 
   // Prompt/ask user for character types desired and check if valid
@@ -18,11 +12,12 @@ var generatePassword = function() {
 
   // calls randomChar function to return random char and assembles the
   // password according to user specifics
-  assemblePass();
+  var password = assemblePass();
 
+  // return final generated password
+  return password;
 };
 
-// function prompts user for charcater count and checks if valid
 var passLength = function(){
   // pass or fail flag
   var valid = false;
@@ -88,20 +83,19 @@ var assemblePass = function(){
   var placement;
   // string password
   var password = "";
-  // Array of characters
+  // Array of characters declaration
   var arrayOfChar = [];
 
+  // loop, adding random char to array for the user desired length
   for (var i = 0; i <= passwordCrit.charCount - 1; i++ ) {
       arrayOfChar[i] = randomChar();
   }
+  // converted list of characters into string
   password = arrayOfChar.join("");
-  console.log(password);
+  return password;
 };
 
 var randomChar = function() {
-
-  // temp variable
-  var temp;
   // random selector for each type
   var ranLC = Math.floor(Math.random() * 26);
   var ranUC = Math.floor(Math.random() * 26);
@@ -112,7 +106,7 @@ var randomChar = function() {
   var randomCharArray = [];
   var i = 0;
 
-  // conditional that if user selected char will be added to array
+  // following sequence adds random char to array depending on if user selected that option
   if(passwordCrit.charType[0].lowercase) {
     randomCharArray[i] = passwordCrit.charType[0].lcArray.charAt(ranLC);
     i++;
@@ -130,14 +124,14 @@ var randomChar = function() {
     i++
   }
 
-  console.log(randomCharArray);
   // select randomly from array
   var finalSelector = Math.floor(Math.random() * randomCharArray.length - 1) + 1;
-  console.log(finalSelector);
+
+  // return single random character
   return randomCharArray[finalSelector];
 };
 
-// object declaration, defaults to unvalid options
+// object declaration
 var passwordCrit = {
   charCount: 1,
   charType: [ 
@@ -158,17 +152,9 @@ var passwordCrit = {
             {
              special: false,
              message: "Would you like to include special characters in your password?",
-             specialArray: "!”#$%&’()*+,-./:;<=>?@[\]^`{|}~"
+             specialArray: "!”#$%&’()*+,-./:;<=>?@[\\]^`{|}~"
             }]      
 };
-
-// var charTypePrompts = [
-//     "Would you like to include lowercase characters in your password?",
-//     "Would you like to include uppercase characters in your password?",
-//     "Would you like to include numeric characters in your password?",
-//     "Would you like to include special characters in your password?"
-// ];
-generatePassword();
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
