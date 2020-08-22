@@ -14,7 +14,7 @@ var generatePassword = function() {
   passLength();
 
   // Prompt/ask user for character types desired and check if valid
-  // passCharType();
+  passCharType();
 
 };
 
