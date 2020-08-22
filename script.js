@@ -2,18 +2,22 @@
 
 // global variables
 // variable declaration for password length
-var passwordLength;
-// variable declaration for character types, default true for all
-var characterType = {lowercase: true,
-                     uppercase: true,
-                     numeric:   true,
-                     special:   true};
+
+// object declaration, defaults to unvalid options
+var passwordCrit = {
+                    charCount: 1,
+                    charType: { lowercase: false,
+                                uppercase: false,
+                                numeric:   false,
+                                special:   false}
+
+}
 
 // prompt user for Password Criteria
-var passCrit = function() {
+var generatePassword = function() {
   // Welcome user and prompt with Password Criteria
   window.alert("Welcome to Password Generator!\nPassword Criteria:\n1.) 8 character minimum 127 character maximum\n2.) MUST include at least one of the following character types:\nlowercase, uppercase, numeric, and/or special characters");
-
+  
   // Prompt/ask user for character count and check if valid
   passLength();
 
@@ -37,7 +41,7 @@ var passLength = function(){
       valid = true;
   }
 }
-passCrit();
+generatePassword();
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
