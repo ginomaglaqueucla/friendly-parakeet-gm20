@@ -95,7 +95,7 @@ var assemblePass = function(){
       arrayOfChar[i] = randomChar();
   }
   password = arrayOfChar.join("");
-  console.log(test);
+  console.log(password);
 };
 
 var randomChar = function() {
