@@ -16,6 +16,9 @@ var generatePassword = function() {
   // Prompt/ask user for character types desired and check if valid
   passCharType();
 
+  // create password
+  createPass();
+
 };
 
 // function prompts user for charcater count and checks if valid
@@ -85,15 +88,17 @@ var createPass = function(){
   // string password template
   var password = "";
   var arrayOfChar = [];
-
+  var test = randomChar();
+  console.log(test);
   // create template password
-  for (var i = 0; i <= passwordCrit.charCount - 1; i++ ) {
-      arrayOfChar = randomChar();
-      password.charAt(i);
-  }
+  // for (var i = 0; i <= passwordCrit.charCount - 1; i++ ) {
+  //     arrayOfChar = randomChar();
+  //     // password.charAt(i);
+  // }
 };
 
 var randomChar = function() {
+
   // temp variable
   var temp;
   // random selector for each type
@@ -106,18 +111,23 @@ var randomChar = function() {
   var randomCharArray = [];
 
   // conditional that if user selected char will be added to array
-  if(passwordCrit.charType.lowercase) {
-    randomCharArray[0] = passwordCrit.charType.lcArray.charAt(ranLC);
-  } else if (passwordCrit.charType.uppercase) {
-    randomCharArray[1] = passwordCrit.charType.lcArray.charAt(ranUC);
-  } else if (passwordCrit.charType.numeric) {
-    randomCharArray[2] = passwordCrit.charType.lcArray.charAt(ranNumeric);
-  } else if (passwordCrit.charType.special) {
-    randomCharArray[3] = passwordCrit.charType.lcArray.charAt(ranSpecial);
+  if(passwordCrit.charType[0].lowercase) {
+    randomCharArray[0] = passwordCrit.charType[0].lcArray.charAt(ranLC);
+  }
+  if (passwordCrit.charType[1].uppercase) {
+    randomCharArray[1] = passwordCrit.charType[1].upArray.charAt(ranUC);
+  }
+  if (passwordCrit.charType[2].numeric) {
+    randomCharArray[2] = passwordCrit.charType[2].numArray.charAt(ranNumeric);
+  }
+  if (passwordCrit.charType[3].special) {
+    randomCharArray[3] = passwordCrit.charType[3].specialArray.charAt(ranSpecial);
   }
 
+  console.log(randomCharArray);
   // select randomly from array
   var finalSelector = Math.floor(Math.random() * randomCharArray.length - 1) + 1;
+  console.log(finalSelector);
   return randomCharArray[finalSelector];
 };
 
