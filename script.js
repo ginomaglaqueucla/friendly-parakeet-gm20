@@ -16,8 +16,9 @@ var generatePassword = function() {
   // Prompt/ask user for character types desired and check if valid
   passCharType();
 
-  // create password
-  createPass();
+  // calls randomChar function to return random char and assembles the
+  // password according to user specifics
+  assemblePass();
 
 };
 
@@ -82,17 +83,19 @@ var passCharType = function(){
   }
 }
 
-var createPass = function(){
+var assemblePass = function(){
   // index of where the character will be placed
   var placement;
-  // string password template
+  // string password
   var password = "";
+  // Array of characters
   var arrayOfChar = [];
 
   for (var i = 0; i <= passwordCrit.charCount - 1; i++ ) {
       arrayOfChar[i] = randomChar();
   }
-  console.log(arrayOfChar);
+  password = arrayOfChar.join("");
+  console.log(test);
 };
 
 var randomChar = function() {
