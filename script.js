@@ -88,13 +88,11 @@ var createPass = function(){
   // string password template
   var password = "";
   var arrayOfChar = [];
-  var test = randomChar();
-  console.log(test);
-  // create template password
-  // for (var i = 0; i <= passwordCrit.charCount - 1; i++ ) {
-  //     arrayOfChar = randomChar();
-  //     // password.charAt(i);
-  // }
+
+  for (var i = 0; i <= passwordCrit.charCount - 1; i++ ) {
+      arrayOfChar[i] = randomChar();
+  }
+  console.log(arrayOfChar);
 };
 
 var randomChar = function() {
@@ -109,19 +107,24 @@ var randomChar = function() {
 
   // array declaration
   var randomCharArray = [];
+  var i = 0;
 
   // conditional that if user selected char will be added to array
   if(passwordCrit.charType[0].lowercase) {
-    randomCharArray[0] = passwordCrit.charType[0].lcArray.charAt(ranLC);
+    randomCharArray[i] = passwordCrit.charType[0].lcArray.charAt(ranLC);
+    i++;
   }
   if (passwordCrit.charType[1].uppercase) {
-    randomCharArray[1] = passwordCrit.charType[1].upArray.charAt(ranUC);
+    randomCharArray[i] = passwordCrit.charType[1].upArray.charAt(ranUC);
+    i++;
   }
   if (passwordCrit.charType[2].numeric) {
-    randomCharArray[2] = passwordCrit.charType[2].numArray.charAt(ranNumeric);
+    randomCharArray[i] = passwordCrit.charType[2].numArray.charAt(ranNumeric);
+    i++
   }
   if (passwordCrit.charType[3].special) {
-    randomCharArray[3] = passwordCrit.charType[3].specialArray.charAt(ranSpecial);
+    randomCharArray[i] = passwordCrit.charType[3].specialArray.charAt(ranSpecial);
+    i++
   }
 
   console.log(randomCharArray);
