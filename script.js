@@ -41,23 +41,38 @@ var passLength = function(){
 var passCharType = function(){
   // pass or fail flag
   var valid = false;
+  var validCounter = 0;
+  // user selection;
+  var userSelection;
 
   // while loop to prompt user character type selection until validation passes
   while(!valid) {
-    window.alert(passwordCrit.charType[0]);
     // for loop to cycle thru charType object
-    for (var i=0; i < passwordCrit.charType.length - 1; i++ ){
+    for (var i=0; i <= passwordCrit.charType.length - 1; i++ ){
       // prompt
-      passwordCrit.charType[i] = window.confirm(charTypePrompts[i])
+      userSelection = window.confirm(passwordCrit.charType[i].message)
 
+      // assign value and check if valid
+      if (i === 0){
+        passwordCrit.charType.lowercase = userSelection;
+      } else if (i === 1){
+          passwordCrit.charType.uppercase = userSelection;
+      } else if (i === 2) {
+          passwordCrit.charType.numeric = userSelection;
+      } else if (i === 3) {
+          passwordCrit.charType.special = userSelection;
+      }
       // check if at least one selection was made algorithm
-      if (passwordCrit.charType[i]) {
-        valid = true;
+      if (!userSelection) {
+        validCounter++;
+        if (validCounter === passwordCrit.charType.length){
+          valid = false;
+        }
       } else {
-        valid = false;
+        valid = true;
       }
     }
-    // alert if doesn't pass validation and 
+    // alert if doesn't pass validation
     if (!valid) {
       window.alert("INVALID! You must select at least one of the character type options");
     }
