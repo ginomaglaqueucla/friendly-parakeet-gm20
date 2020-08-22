@@ -79,26 +79,47 @@ var passCharType = function(){
   }
 }
 
+var createPass = function(){
+  // index of where the character will be placed
+  var placement;
+  // string password template
+  var password = "";
+  var arrayOfChar = [];
+
+  // create template password
+  for (var i = 0; i <= passwordCrit.charCount - 1; i++ ) {
+      arrayOfChar = randomChar();
+      password.charAt(i);
+  }
+};
+
+var randomChar = function() {
+
+};
+
 // object declaration, defaults to unvalid options
 var passwordCrit = {
   charCount: 1,
   charType: [ 
             {lowercase: false,
-             message: "Would you like to include lowercase characters in your password?"
+             message: "Would you like to include lowercase characters in your password?",
+             lcArray: "abcdefghijklmnopqrstuvwxyz"
             },
             {
              uppercase: false,
-             message: "Would you like to include uppercase characters in your password?"
+             message: "Would you like to include uppercase characters in your password?",
+             upArray: "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
             },
             {
              numeric: false,
-             message: "Would you like to include numeric characters in your password?"
+             message: "Would you like to include numeric characters in your password?",
+             numArray: "123456789"
             },
             {
              special: false,
-             message: "Would you like to include special characters in your password?"
-            }
-          ]              
+             message: "Would you like to include special characters in your password?",
+             special: "!”#$%&’()*+,-./:;<=>?@[\]^`{|}~"
+            }]      
 };
 
 // var charTypePrompts = [
