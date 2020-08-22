@@ -94,7 +94,31 @@ var createPass = function(){
 };
 
 var randomChar = function() {
+  // temp variable
+  var temp;
+  // random selector for each type
+  var ranLC = Math.floor(Math.random() * 26);
+  var ranUC = Math.floor(Math.random() * 26);
+  var ranNumeric = Math.floor(Math.random() * 9);
+  var ranSpecial = Math.floor(Math.random() * 31);
 
+  // array declaration
+  var randomCharArray = [];
+
+  // conditional that if user selected char will be added to array
+  if(passwordCrit.charType.lowercase) {
+    randomCharArray[0] = passwordCrit.charType.lcArray.charAt(ranLC);
+  } else if (passwordCrit.charType.uppercase) {
+    randomCharArray[1] = passwordCrit.charType.lcArray.charAt(ranUC);
+  } else if (passwordCrit.charType.numeric) {
+    randomCharArray[2] = passwordCrit.charType.lcArray.charAt(ranNumeric);
+  } else if (passwordCrit.charType.special) {
+    randomCharArray[3] = passwordCrit.charType.lcArray.charAt(ranSpecial);
+  }
+
+  // select randomly from array
+  var finalSelector = Math.floor(Math.random() * randomCharArray.length - 1) + 1;
+  return randomCharArray[finalSelector];
 };
 
 // object declaration, defaults to unvalid options
@@ -113,12 +137,12 @@ var passwordCrit = {
             {
              numeric: false,
              message: "Would you like to include numeric characters in your password?",
-             numArray: "123456789"
+             numArray: "0123456789"
             },
             {
              special: false,
              message: "Would you like to include special characters in your password?",
-             special: "!”#$%&’()*+,-./:;<=>?@[\]^`{|}~"
+             specialArray: "!”#$%&’()*+,-./:;<=>?@[\]^`{|}~"
             }]      
 };
 
