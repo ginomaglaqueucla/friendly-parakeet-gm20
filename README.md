@@ -11,14 +11,25 @@ Usage:
         4. The generated password will be displayed in the dotted box on the page
 
 Usage (Screenshots):
+Main Page
 ![Main Page](./assets/images/Main-page.png)
-        
+Welcome Alert Message
+![Welcome Alert Message](./assets/images/first-prompt.png)
+Password Length Prompt
+![Password Length Prompt](./assets/images/length-prompt.png)
+Invalid Password Length Alert Message
+![Invalid Password Length Alert Message](./assets/images/invalid-length.png)
+Character Type Selection - Lowercase
+![Character Type Selection - Lowercase](./assets/images/lowercase-prompt.png)
+Character Type Selection - Uppercase
+![Character Type Selection - Upperrcase](./assets/images/uppercase-prompt.png)
+Character Type Selection - Numeric
+![Character Type Selection - Lowercase](./assets/images/Numeric-prompt.png)
+Character Type Selection - Special
+![Character Type Selection - Lowercase](./assets/images/special-prompt.png)
 
-Future Updates Portfolio is not complete and future upgrades and changes are to come. (1) Section must be restructure to apply a more effiencent and cleaner flex or grid. (2) Fix animations with work section links. (3) Make page more responsive and adaptive with smaller screens (4) Clean up flex containers within sections
 
-Screenshot: Portfolio
-
-Credits Changes/Commits by: ginomaglaqueucla - (https://github.com/ginomaglaqueucla/portfolio-gm20/)
+Credits Changes/Commits by: ginomaglaqueucla - (https://github.com/ginomaglaqueucla/friendly-parakeet-gm20.git)
 
 License MIT License
 
