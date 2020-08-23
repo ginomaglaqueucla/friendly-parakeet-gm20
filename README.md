@@ -1,8 +1,15 @@
-Installation Go to the following link to view Gino Maglaque's portfolio site (https://ginomaglaqueucla.github.io/portfolio-gm20/)
+Installation:
+    Go to the following link to view The Friendly Parakeet Password Generator site (https://ginomaglaqueucla.github.io/friendly-parakeet-gm20/)
 
-If accessing mock-up locally, clone repository from (https://github.com/ginomaglaqueucla/portfolio-gm20.git) to local directory on computer. Open index.html through your browser and mock-up site will come up.
+    If accessing locally, clone repository from (https://github.com/ginomaglaqueucla/friendly-parakeet-gm20.git) to local directory on computer. Open index.html through your browser and mock-up site will come up.
 
-Usage Portfolio is a web application that contains career information of Gino Maglaque. Navigation section that will UI scroll to respective section. About section displays general information of Gino. Work section contains Gino's most recent web app projects and when clicked upon will direct you to them. Contact section list information how to contact Gino
+Usage:
+    The Friendly Parakeet Password Generator is web application that will simply generate a password based off of the inputs of the user. The user can set a password criteria of how the desired length of password (MUST be between 8 - 127 characters) as well as the option to select what character types is included in the password (MUST select at least one of the following: lowercase, uppercase, numeric, special). 
+        1. The user will click the the [Generate Password] button
+        2. User will input in prompt for valid password length
+        3. User will select [OK] (Yes) or [Cancel] (No) for a series of confirms for character types
+        4. The generated password will be displayed in the dotted box on the page
+        
 
 Future Updates Portfolio is not complete and future upgrades and changes are to come. (1) Section must be restructure to apply a more effiencent and cleaner flex or grid. (2) Fix animations with work section links. (3) Make page more responsive and adaptive with smaller screens (4) Clean up flex containers within sections
 
