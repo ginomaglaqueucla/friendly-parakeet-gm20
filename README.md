@@ -9,6 +9,9 @@ Usage:
         2. User will input in prompt for valid password length
         3. User will select [OK] (Yes) or [Cancel] (No) for a series of confirms for character types
         4. The generated password will be displayed in the dotted box on the page
+
+Usage (Screenshots):
+![Main Page](./assets/images/Main-page.png)
         
 
 Future Updates Portfolio is not complete and future upgrades and changes are to come. (1) Section must be restructure to apply a more effiencent and cleaner flex or grid. (2) Fix animations with work section links. (3) Make page more responsive and adaptive with smaller screens (4) Clean up flex containers within sections
