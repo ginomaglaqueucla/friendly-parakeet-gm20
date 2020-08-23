@@ -1,7 +1,8 @@
 Installation:
-    Go to the following link to view The Friendly Parakeet Password Generator site (https://ginomaglaqueucla.github.io/friendly-parakeet-gm20/)
 
-    If accessing locally, clone repository from (https://github.com/ginomaglaqueucla/friendly-parakeet-gm20.git) to local directory on computer. Open index.html through your browser and mock-up site will come up.
+Go to the following link to view The Friendly Parakeet Password Generator site (https://ginomaglaqueucla.github.io/friendly-parakeet-gm20/)
+
+If accessing locally, clone repository from (https://github.com/ginomaglaqueucla/friendly-parakeet-gm20.git) to local directory on computer. Open index.html through your browser and mock-up site will come up.
 
 Usage:
     The Friendly Parakeet Password Generator is web application that will simply generate a password based off of the inputs of the user. The user can set a password criteria of how the desired length of password (MUST be between 8 - 127 characters) as well as the option to select what character types is included in the password (MUST select at least one of the following: lowercase, uppercase, numeric, special). 
@@ -13,18 +14,25 @@ Usage:
 Usage (Screenshots):
 Main Page
 ![Main Page](./assets/images/Main-page.png)
+
 Welcome Alert Message
 ![Welcome Alert Message](./assets/images/first-prompt.png)
+
 Password Length Prompt
 ![Password Length Prompt](./assets/images/length-prompt.png)
+
 Invalid Password Length Alert Message
 ![Invalid Password Length Alert Message](./assets/images/invalid-length.png)
+
 Character Type Selection - Lowercase
 ![Character Type Selection - Lowercase](./assets/images/lowercase-prompt.png)
+
 Character Type Selection - Uppercase
 ![Character Type Selection - Upperrcase](./assets/images/uppercase-prompt.png)
+
 Character Type Selection - Numeric
 ![Character Type Selection - Lowercase](./assets/images/Numeric-prompt.png)
+
 Character Type Selection - Special
 ![Character Type Selection - Lowercase](./assets/images/special-prompt.png)
 
